@@ -1,10 +1,13 @@
 package Classes;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class StoreServices {
     ArrayList<String> pets = new ArrayList<>();
     ArrayList<String> services = new ArrayList<>();
+
+    Scanner reader = new Scanner(System.in);
 
     public void AddPet () {
         pets.add(" 1) Кролики");
@@ -35,11 +38,45 @@ public class StoreServices {
 
 
     public void buy() {
+        String PetName;
         System.out.println("У нас вы можете купить таких животных: " + ListPet() +"\n" + "Какие животные вас заинтересовали?");
+        PetName = reader.nextLine().toLowerCase();
+        switch (PetName) {
+            case "кролики" :
+                Rabbit rabbit = new Rabbit();
+                System.out.println("Отлично,я могу продать вам несколько кроликов: " + rabbit.ListPet());
+                break;
+            case "кошки" :
+                Cat cat = new Cat();
+                System.out.println("Отлично,я могу продать вам несколько кошек: " + cat.ListPet());
+                break;
+            case "собаки" :
+                Dog dog = new Dog();
+                System.out.println("Отлично,я могу продать вам несколько собак: " + dog.ListPet());
+                break;
+
+        }
     }
 
     public void selection() {
+        String PetName;
         System.out.println("Для селекции мы можем предложить вам таких животных: " + ListPet() + "\n" + "Какие животные вас заинтересовали?");
+        PetName = reader.nextLine().toLowerCase();
+        switch (PetName) {
+            case "кролики" :
+                Rabbit rabbit = new Rabbit();
+                System.out.println("Отлично, для селекции у нас есть несколько пород кроликов: " + rabbit.ListPet());
+                break;
+            case "кошки" :
+                Cat cat = new Cat();
+                System.out.println("Отлично, для селекции у нас есть несколько пород кошек: " + cat.ListPet());
+                break;
+            case "собаки" :
+                Dog dog = new Dog();
+                System.out.println("Отлично, для селекции у нас есть несколько пород собак: " + dog.ListPet());
+                break;
+
+        }
     }
 
     public void info() {
