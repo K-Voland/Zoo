@@ -15,7 +15,7 @@ public class Start {
         service.AddPet();
 
         try {
-            System.out.println("Добро пожаловать в наш магазин,как вам можно обращаться?");
+            System.out.println("Добро пожаловать в наш магазин, как вам можно обращаться?");
             Thread.sleep(2000);
             System.out.println("Введите ваше имя:");
             name = reader.nextLine();
@@ -26,15 +26,10 @@ public class Start {
                 work = reader.nextLine().toLowerCase();
 
                 switch (work) {
-                    case "купить" :
-                        service.buy();
-                        break;
-                    case "селекционировать" :
-                        service.selection();
-                        break;
-                    case "получить информацию" :
-                        service.info();
-                        break;
+                    default: System.out.println("Простите,но наш магазин не предоставляет таких услуг("); break;
+                    case "1" : service.buy(); break;
+                    case "2" : service.selection(); break;
+                    case "3" : service.info(); break;
 
                 } // конец свича
 

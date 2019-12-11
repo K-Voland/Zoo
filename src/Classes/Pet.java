@@ -9,7 +9,12 @@ public abstract class Pet {
     public String ListPet() {
         return null;
     }
-    public void GetInfo() {
+
+    public void GetInfo(Pet pet, String species) {
+
+    }
+
+    public void PetInfo(Pet pet, String species) {
 
     }
 
