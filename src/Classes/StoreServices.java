@@ -35,8 +35,6 @@ public class StoreServices {
         return service;
     }
 
-
-
     public void buy() {
         String PetName;
         System.out.println("У нас вы можете купить таких животных: " + ListPet() +"\n" + "Какие животные вас заинтересовали?");
@@ -56,7 +54,7 @@ public class StoreServices {
                 System.out.println("Отлично,я могу продать вам несколько собак: " + dog.ListPet());
                 break;
         }//конец свича покупки
-    }
+    }//buy exit
 
     public void selection() {
         String PetName;
@@ -78,7 +76,7 @@ public class StoreServices {
                 break;
 
         } //конец свича селекции
-    }
+    } //selection exit
 
     public void info() {
         String PetName;
@@ -121,7 +119,7 @@ public class StoreServices {
                 } else System.out.println("Простите,но у нас нет такой породы кошек");
                 break;
             case "3" :
-                Dog dog = new Dog();
+                Pet dog = new Dog();
 
                 System.out.println("Отлично, вы можете получить информацию о таких породах собак: " + dog.ListPet());
                 System.out.println("Информацию о какой собаке вы хотите?");
@@ -138,6 +136,5 @@ public class StoreServices {
 
         } //конец свича информации
 
-
-    }
+    } //info exit
 }

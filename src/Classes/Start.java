@@ -36,7 +36,7 @@ public class Start {
             } // конец приветствия(if)
         } catch (Exception e) { e.printStackTrace(); }
 
-    }
+    }//exit greeting
 
     public String getName() {
         return name;

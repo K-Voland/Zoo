@@ -24,53 +24,21 @@ public class Dog extends Pet {
 
     @Override
     public void GetInfo(Pet pet, String species) {
-            if ("korgi".equals(species)) {
-                System.out.println("Корги: заняшкаю тебя своей большой и пушистой жопкой!");
-                try {
-                    FileInputStream file = new FileInputStream("C:/Users/datmol/IdeaProjects/Zoo/Info/DogInfo/korgi.txt");
-                    BufferedReader sc = new BufferedReader(new InputStreamReader(file));
-                    String line;
-
-                    while ((line = sc.readLine()) != null) {
-                        System.out.println(line);
-                    }
-                    file.close();
-                    sc.close();
-                } catch (FileNotFoundException e) { System.out.println("Файл не найден"); }
-                catch (IOException e) { e.printStackTrace(); }
-            } //конец проверки на корги
-
-            if ("nemec".equals(species)) {
-                System.out.println("Немец: о, дружище, я так скучал!!!");
-                try {
-                    FileInputStream file = new FileInputStream("C:/Users/datmol/IdeaProjects/Zoo/Info/DogInfo/nemec.txt");
-                    BufferedReader sc = new BufferedReader(new InputStreamReader(file));
-                    String line;
-
-                    while ((line = sc.readLine()) != null) {
-                        System.out.println(line);
-                    }
-                    file.close();
-                    sc.close();
-                } catch (FileNotFoundException e) { System.out.println("Файл не найден"); }
-                catch (IOException e) { e.printStackTrace(); }
-            } //конец проверки на немца
-
-            if ("doberman".equals(species)) {
-                System.out.println("Доберман: ты только посмотри,на каком уровне брутальности я нахожусь.");
-                try {
-                    FileInputStream file = new FileInputStream("C:/Users/datmol/IdeaProjects/Zoo/Info/DogInfo/doberman.txt");
-                    BufferedReader sc = new BufferedReader(new InputStreamReader(file));
-                    String line;
-
-                    while ((line = sc.readLine()) != null) {
-                        System.out.println(line);
-                    }
-                    file.close();
-                    sc.close();
-                } catch (FileNotFoundException e) { System.out.println("Файл не найден"); }
-                catch (IOException e) { e.printStackTrace(); }
-            } //конец проверки на добермана
-        }
+        System.out.println("Класс собак к услугам!");
+        super.url += "DogInfo";
+            switch (species) {
+                case "korgi":
+                   super.url += "/korgi.txt";
+                    break;
+                case "nemec":
+                    super.url += "/nemec.txt";
+                    break;
+                case "doberman":
+                    super.url += "/doberman.txt";
+                    break;
+            }
+        super.GetInfo(pet, species);
+        System.out.println(url);
+    }
 
 }
